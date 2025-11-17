@@ -1,0 +1,46 @@
+{
+  "navbar": {
+    "home": "الرئيسية",
+  "about": "من أنا",
+  "experience": "الخبرات",
+  "projects": "المشاريع",
+  "contact": "التواصل"
+  },
+  "home":{
+  "welcome": "مرحباً",
+  "i_am": "أنا",
+  "name": "أحمد خالد",
+  "job_title": "مطور واجهات أمامية"
+  },
+  "about":{
+  "about_me_title": "نبذة عني",
+  "about_me_desc": "أنا مطور واجهات أمامية طموح أمتلك معرفة قوية بـ HTML5 وCSS3 وJavaScript، وخبرة عملية في استخدام Angular لبناء تطبيقات ويب تفاعلية وسريعة الاستجابة. لدي فهم متين لمفاهيم البرمجة كائنية التوجه، وخدمات الويب (REST, JSON)، وأدوات التحكم في الإصدارات مثل Git. شغوف بكتابة كود نظيف، والتعلم المستمر، والمساهمة في فرق التطوير التي تعمل وفق منهجية Agile."
+  },
+  "experience":{
+    "experience_education_title": "الخبرات والتعليم",
+
+  "education_1_title": "كلية نظم المعلومات وعلوم الحاسب - جامعة 6 أكتوبر",
+  "education_1_degree": "درجة البكالوريوس في قسم علوم الحاسب",
+
+  "experience_1_title": "مبادرة رواد مصر الرقمية (DEPI) - تطوير واجهات أمامية باستخدام Angular",
+  "experience_1_desc_1": "بناء واجهات تفاعلية باستخدام Angular مع مكونات قابلة لإعادة الاستخدام وتحسين الأداء واستجابة التطبيقات على مختلف الأجهزة.",
+  "experience_1_desc_2": "المشاركة في مشاريع جماعية بتطبيق أحدث ممارسات تطوير الواجهات الأمامية.",
+
+  "experience_2_title": "المعهد القومي للاتصالات (NTI) - تطوير تطبيقات MEAN Stack",
+  "experience_2_desc": "تدريب على MongoDB وExpress وAngular وNode.js مع التركيز على بناء واجهات أمامية سريعة الاستجابة.",
+
+    "experience_3_title": "Route Academy – تطوير واجهات أمامية باستخدام Angular",
+  "experience_3_desc": "اكتسبت مهارات عملية في تطوير تطبيقات Angular وتطبيق أحدث ممارسات تطوير الواجهات الأمامية."
+  },
+  "contact":{
+   "contact_title": "التواصل",
+  "contact_phone": "رقم الهاتف",
+  "contact_email": "البريد الإلكتروني",
+  "contact_linkedin": "لينكد إن",
+  "contact_location": "الموقع",
+  "contact_phone_value": "+20 1026998272",
+  "contact_email_value": "engahmedkhaled2002@gmail.com",
+  "contact_linkedin_value": "linkedin.com/in/ahmedkhaled",
+  "contact_location_value": "القاهرة، مصر"
+  }
+}

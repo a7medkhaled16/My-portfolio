@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+/* @import "tailwindcss";
+@source "../node_modules/flowbite";
+@plugin "daisyui";
+
+
+@theme{
+    --color-main:#ea580c;
+    --color-txt:#1F2937;
+    --shadow-main:rgba(145,158,171,.2) 0px 2px 4px -1px,rgba(145,158,171,.14) 0px 4px 5px 0px,rgba(145,158,171,.12) 0px 1px 10px 0px;
+    --font-main:'Encode Sans Expanded', sans-serif;
+    --color-rating:#ffc908;
+}
+@layer components{
+    .main-btn{
+        @apply bg-main text-white rounded-xl my-3 px-5 py-2 w-full hover:bg-main/80 transition duration-700 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 cursor-pointer
+    }
+    .main-input{
+        @apply bg-gray-50 border my-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+    }
+} */
+
+@import "tailwindcss";
+
+/* تفعيل Dark Mode */
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-main: #ea580c;
+  --color-txt: #1F2937;
+  --shadow-main: rgba(145,158,171,.2) 0px 2px 4px -1px,rgba(145,158,171,.14) 0px 4px 5px 0px,rgba(145,158,171,.12) 0px 1px 10px 0px;
+  --font-main: 'Encode Sans Expanded', sans-serif;
+  --color-rating: #ffc908;
+  
+  /* ألوان Dark Mode */
+  --color-dark-bg: #111827;
+  --color-dark-surface: #1F2937;
+  --color-dark-text: #F9FAFB;
+}
+@theme {
+  --container-center: true;
+  --container-padding: 1rem;
+}
+
+@layer components {
+  .main-btn {
+    @apply bg-main text-white rounded-xl my-3 px-5 py-2 w-full 
+           hover:bg-main/80 transition duration-700 
+           translate-y-full opacity-0 
+           group-hover:translate-y-0 group-hover:opacity-100 
+           cursor-pointer;
+  }
+  
+  .main-input {
+    @apply bg-gray-50 border my-4 border-gray-300 
+           text-gray-900 text-sm rounded-lg 
+           focus:ring-blue-500 focus:border-blue-500 
+           block w-full p-2.5 
+           dark:bg-gray-700 dark:border-gray-600 
+           dark:placeholder-gray-400 dark:text-white 
+           dark:focus:ring-blue-500 dark:focus:border-blue-500;
+  }
+
+
+}
+
+/* انتقال سلس */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+ 

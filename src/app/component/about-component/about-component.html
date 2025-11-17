@@ -1,0 +1,48 @@
+
+<!-- <section class="my-25 h-[90vh] dark:text-white " >
+
+    
+    <h2 class="text-4xl font-bold text-center">About me</h2>
+    <div class="bg-main w-[100px] h-[5px] m-auto mt-2 rounded"></div>
+    <div class="grid grid-cols-12 p-6">
+        
+        <div class="sm:col-span-12 md:col-span-4  w-[300px] h-[300px] relative left-20"  [@slideInLeft]>
+            <div class="rounded-full border border-main bg-gray-200">
+            <img src="/imges/faa_profile-removebg-preview (1).png" class="w-full" alt="">
+        </div>
+        </div>
+        <div class="sm:col-span-12 md:col-span-8">
+             <p class="text-gray-800 text-2xl font-bold relative top-15 dark:text-white" [@slideInRight]>  
+            I am a motivated <span class="text-main">Front-End Developer</span> with strong knowledge of HTML5, CSS3, JavaScript, and hands-on 
+            experience using Angular to build responsive, user-friendly web applications. I have a solid understanding of 
+            object-oriented programming, web services (REST, JSON), and version control tools like Git. Passionate about 
+            clean code, continuous learning, and contributing to agile development teams..
+        </p>
+        </div>
+    </div>
+</section> -->
+
+<section class="my-16 md:my-25 min-h-[90vh] dark:text-white py-10">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center">{{'about.about_me_title'|translate}}</h2>
+    <div class="bg-main w-[100px] h-[5px] mx-auto mt-2 rounded"></div>
+    
+    <div class="container">
+        <div class="grid grid-cols-12 gap-8 p-6 mt-8 items-center">
+            
+            <!-- Image Section -->
+            <div class="col-span-12 md:col-span-4 flex justify-center" [@slideInLeft]>
+                <div class="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] rounded-full border-4 border-main bg-gray-200 overflow-hidden">
+                    <img src="/imges/faa_profile-removebg-preview (1).png" class="w-full h-full object-cover" alt="Ahmed Khaled">
+                </div>
+            </div>
+            
+            <!-- Text Section -->
+            <div class="col-span-12 md:col-span-8 px-4 md:px-8" [@slideInRight]>
+                <p class="text-gray-800 dark:text-white text-lg sm:text-xl md:text-2xl font-bold leading-relaxed">  
+                    {{'about.about_me_desc'|translate}}
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</section>

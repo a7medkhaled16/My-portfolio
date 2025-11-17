@@ -1,0 +1,46 @@
+{
+  "navbar": {
+    "home": "Home",
+  "about": "About",
+  "experience": "Experience",
+  "projects": "Projects",
+  "contact": "Contact"
+  },
+  "home":{
+  "welcome": "Welcome",
+  "i_am": "I am",
+  "name": "Ahmed Khaled",
+  "job_title": "Frontend Developer"
+  },
+  "about":{
+    "about_me_title": "About me",
+  "about_me_desc": "I am a motivated Front-End Developer with strong knowledge of HTML5, CSS3, JavaScript, and hands-on experience using Angular to build responsive, user-friendly web applications. I have a solid understanding of object-oriented programming, web services (REST, JSON), and version control tools like Git. Passionate about clean code, continuous learning, and contributing to agile development teams."
+  },
+  "experience":{
+     "experience_education_title": "Experience & Education",
+
+  "education_1_title": "Faculty of (Information System & Computer Science), (October 6) University",
+  "education_1_degree": "Bachelor's degree in Computer Science department",
+
+  "experience_1_title": "Digital Egypt Pioneers Initiative (DEPI) - Angular Frontend",
+  "experience_1_desc_1": "Built dynamic Angular interfaces with reusable components, improved app performance and responsiveness across devices.",
+  "experience_1_desc_2": "Supported team projects by applying modern frontend practices.",
+
+  "experience_2_title": "NTI - National Telecommunication Institute MEAN Stack Web Development",
+  "experience_2_desc": "Trained on MongoDB, Express, Angular, and Node.js with focus on building responsive frontend apps.",
+
+    "experience_3_title": "Route Academy – Angular Frontend",
+  "experience_3_desc": "Gained practical skills in Angular development and modern frontend practices."
+  },
+  "contact":{
+    "contact_title": "Contact",
+  "contact_phone": "Phone",
+  "contact_email": "Email",
+  "contact_linkedin": "LinkedIn",
+  "contact_location": "Location",
+  "contact_phone_value": "+20 1026998272",
+  "contact_email_value": "engahmedkhaled2002@gmail.com",
+  "contact_linkedin_value": "linkedin.com/in/ahmedkhaled",
+  "contact_location_value": "Cairo, Egypt"
+  }
+}
