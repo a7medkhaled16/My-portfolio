@@ -67,11 +67,11 @@
 </section> -->
 
 
-<section class="dark:bg-black py-10 md:py-20">
+<!-- <section class="dark:bg-black py-10 md:py-20">
 <div class="container grid grid-cols-12 gap-4">
-    <!-- Text Section -->
+    
     <div class="col-span-12 md:col-span-6 flex items-center" [@slideInLeft]>
-        <div class="caption sm:mt-10 px-4 sm:px-8 md:px-12 dark:text-white">
+        <div class="caption my-3 sm:mt-10 px-4 sm:px-8 md:px-12 dark:text-white">
             <h5 class="font-bold text-xl mb-2">
                 {{'home.welcome'|translate}}
             </h5>
@@ -88,14 +88,14 @@
         </div>
     </div>
     
-    <!-- Image Section -->
+   
     <div class="col-span-12 md:col-span-6 flex items-center justify-center" [@slideInRight]>
         <div class="img relative w-full max-w-[500px] h-[450px] sm:h-[550px] md:h-[600px]">
-            <!-- الدائرة الخلفية -->
+           
             <div class="absolute w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] md:w-[450px] md:h-[450px] 
                         top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                         bg-main rounded-full"></div>
-            <!-- الصورة -->
+           
             <img src="/imges/faa_profile-removebg-preview (1).png" 
                  class="absolute w-[350px] sm:w-[480px] md:w-[550px] 
                         top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10" 
@@ -103,8 +103,43 @@
         </div>
     </div>
 </div>
-</section>
+</section> -->
 
+<section class="dark:bg-black min-h-screen flex items-center pt-20 md:pt-0">
+<div class="container grid grid-cols-12 gap-4">
+    <!-- Text Section -->
+    <div class="col-span-12 md:col-span-6 flex items-center" [@slideInLeft]>
+        <div class="caption px-4 sm:px-8 md:px-12 dark:text-white">
+            <h5 class="font-bold text-xl mb-2">
+                {{'home.welcome'|translate}}
+            </h5>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                {{'home.i_am'|translate}} <br>{{'home.name'|translate}}<br>
+                <span class="text-main">{{'home.job_title'|translate}}</span>
+            </h1>
+            <div class="w-full max-w-[200px] flex justify-between mt-6">
+                <a href="https://github.com/a7medkhaled16"><i class="fab fa-github text-2xl text-gray-600 hover:text-main transition"></i></a>
+                <a href="https://www.linkedin.com/in/ahmedkhaled16"><i class="fab fa-linkedin text-2xl text-gray-600 hover:text-main transition"></i></a>
+                <a href="https://www.instagram.com/a7meed_aboels3ood"><i class="fab fa-instagram text-2xl text-gray-600 hover:text-main transition"></i></a>
+                <a href="https://www.facebook.com/ahmed.aboelsoud.1690"><i class="fab fa-facebook text-2xl text-gray-600 hover:text-main transition"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Image Section -->
+    <div class="col-span-12 md:col-span-6 flex items-center justify-center" [@slideInRight]>
+        <div class="img relative w-full max-w-[500px] h-[400px] sm:h-[500px] md:h-[600px]">
+            <div class="absolute w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] 
+                        top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                        bg-main rounded-full"></div>
+            <img src="/imges/faa_profile-removebg-preview (1).png" 
+                 class="absolute w-[300px] sm:w-[400px] md:w-[550px] 
+                        top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10" 
+                 alt="Ahmed Khaled">
+        </div>
+    </div>
+</div>
+</section>
 
 <app-about-component/>
 <app-education-component/>
