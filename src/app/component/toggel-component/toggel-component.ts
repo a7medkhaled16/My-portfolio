@@ -1,7 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ThemeService } from '../../services/toggle-dark';
 
-@Component({
+@Component({ changeDetection: ChangeDetectionStrategy.OnPush,
    selector: 'app-toggel-component',
   standalone:true,
   imports: [],

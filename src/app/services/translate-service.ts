@@ -14,11 +14,12 @@ export class Translate {
    ) {
      if (isPlatformBrowser(this.platformId)) {
        const savedLang = localStorage.getItem('lang');
-       if (savedLang) {
+       if (savedLang === 'ar' || savedLang === 'en') {
          this.defaultLang = savedLang;
        }
        this.translateService.setDefaultLang(this.defaultLang);
        this.translateService.use(this.defaultLang);
+       this.changeDir(this.defaultLang);
      }
    }
 

@@ -1,0 +1,3 @@
+a:focus-visible { border-color: var(--color-main); } a:hover { box-shadow: 0 12px 32px #ea580c12; }
+:host-context([dir="rtl"]) .fa-arrow-right { rotate: 180deg; }
+@media (max-width: 380px) { .group { padding: 16px; gap: 12px; } }

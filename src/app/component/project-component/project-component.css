@@ -1,9 +1,3 @@
-
-.section {
-    margin-left: 20px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.section:hover {
-  transform: scale(1.1);
-}
+article:focus-within .translate-y-full { transform: translateY(0); }
+article a:focus-visible { outline-offset: -3px; }
+@media (hover: none) { article .translate-y-full { transform: translateY(0); } }

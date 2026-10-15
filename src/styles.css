@@ -1,8 +1,8 @@
 
 
-@import "tailwindcss";
+@import "tailwindcss" source("./");
 
-/* تفعيل Dark Mode */
+
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -11,8 +11,8 @@
   --shadow-main: rgba(145,158,171,.2) 0px 2px 4px -1px,rgba(145,158,171,.14) 0px 4px 5px 0px,rgba(145,158,171,.12) 0px 1px 10px 0px;
   --font-main: 'Encode Sans Expanded', sans-serif;
   --color-rating: #ffc908;
-  
-  /* ألوان Dark Mode */
+
+
   --color-dark-bg: #111827;
   --color-dark-surface: #1F2937;
   --color-dark-text: #F9FAFB;
@@ -22,31 +22,35 @@
   --container-padding: 1rem;
 }
 
-@layer components {
-  .main-btn {
-    @apply bg-main text-white rounded-xl my-3 px-5 py-2 w-full 
-           hover:bg-main/80 transition duration-700 
-           translate-y-full opacity-0 
-           group-hover:translate-y-0 group-hover:opacity-100 
-           cursor-pointer;
-  }
-  
-  .main-input {
-    @apply bg-gray-50 border my-4 border-gray-300 
-           text-gray-900 text-sm rounded-lg 
-           focus:ring-blue-500 focus:border-blue-500 
-           block w-full p-2.5 
-           dark:bg-gray-700 dark:border-gray-600 
-           dark:placeholder-gray-400 dark:text-white 
-           dark:focus:ring-blue-500 dark:focus:border-blue-500;
-  }
-
-
+:root { --nav-height: 92px; --surface: #fff; --page-bg: #fafaf9; --ink: #172033; --muted: #526074; --line: #e7e8ec; --accent-soft: #fff0e5; --nav-bg: #ffffffed; --orange-glow: #f9731626; --blue-glow: #3b82f61c; --dot-color: #64748b22; }
+html.dark { --surface: #111827; --page-bg: #090e19; --ink: #f3f4f6; --muted: #a6b1c2; --line: #263144; --accent-soft: #ea580c18; --nav-bg: #090e19ed; --orange-glow: #f9731647; --blue-glow: #3b82f63d; --dot-color: #93b4e82b; color-scheme: dark; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 24px); }
+body { margin: 0; background: var(--page-bg); color: var(--ink); font-family: 'Segoe UI', Tahoma, Arial, sans-serif; line-height: 1.6; overflow-x: clip; }
+main { position: relative; isolation: isolate; padding-top: var(--nav-height); }
+.ambient-background::before, .ambient-background::after { content: ''; position: absolute; width: clamp(480px, 56vw, 900px); aspect-ratio: 1; z-index: 0; pointer-events: none; border-radius: 50%; animation: ambient-drift 26s ease-in-out infinite alternate; }
+.ambient-background::before { top: -14%; left: -12%; background: radial-gradient(circle, var(--orange-glow), transparent 68%); }
+.ambient-background::after { bottom: -18%; right: -10%; background: radial-gradient(circle, var(--blue-glow), transparent 68%); animation-delay: -13s; animation-direction: alternate-reverse; }
+.ambient-background { position: fixed; inset: 0; overflow: hidden; z-index: -1; pointer-events: none; }
+.ambient-dots { position: absolute; inset: -48px; z-index: 1; pointer-events: none; background-image: radial-gradient(circle, var(--dot-color) 1px, transparent 1.5px); background-size: 48px 48px; mask-image: linear-gradient(135deg, #0009, transparent 48%, #0007); animation: dots-drift 24s linear infinite; }
+.container { width: min(100% - clamp(40px, 7vw, 128px), 1536px); margin-inline: auto; }
+.portfolio-section { padding-block: clamp(56px, 7vw, 96px); border-top: 1px solid var(--line); }
+section[id] { scroll-margin-top: 0; }
+.portfolio-section h2 { color: var(--ink); font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.4; letter-spacing: -.025em; margin-top: 0; }
+.portfolio-section h2 + div { max-width: 64px; height: 4px; margin-top: 12px; border-radius: 99px; }
+#about, #projects { background: color-mix(in srgb, var(--surface) 18%, transparent); }
+#contact { padding-bottom: 96px; }
+.reveal-pending { opacity: 0; transform: translateY(20px); }
+.reveal-pending.revealed { opacity: 1; transform: none; transition: opacity .65s ease, transform .65s ease; }
+a, button { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid var(--color-main); outline-offset: 4px; }
+::selection { background: #ea580c30; }
+@keyframes ambient-drift { to { transform: translate3d(70px, 65px, 0); } }
+@keyframes dots-drift { to { transform: translate3d(48px, 48px, 0); } }
+.portfolio-section > .max-w-6xl { max-width: 1360px; }
+@media (max-width: 960px) { :root { --nav-height: 72px; } }
+@media (prefers-reduced-motion: reduce) {
+ html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } .reveal-pending { opacity: 1; transform: none; }
 }
 
-/* انتقال سلس */
-* {
-  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
-}
- 
-
+svg.fa-solid, svg.fab { display: inline-block; width: 1em; height: 1em; vertical-align: -.125em; fill: currentColor; flex-shrink: 0; }
+.page-hidden .ambient-background::before, .page-hidden .ambient-background::after, .page-hidden .ambient-dots, .page-hidden .portrait, .hero-motion-paused .portrait { animation-play-state: paused; }

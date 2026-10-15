@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
-@Component({
+@Component({ changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-project-component',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './project-component.html',
   styleUrl: './project-component.css',
 })

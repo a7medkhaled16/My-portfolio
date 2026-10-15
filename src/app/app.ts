@@ -1,10 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { NavbarComponent } from "./component/navbar-component/navbar-component";
 
 
-@Component({
+@Component({ changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-root',
   imports: [ NavbarComponent , RouterOutlet],
   templateUrl: './app.html',

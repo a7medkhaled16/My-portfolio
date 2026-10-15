@@ -1,48 +1,46 @@
+<main>
+<div class="ambient-background" aria-hidden="true"><div class="ambient-dots"></div></div>
+<section id="home" class="hero">
+<div class="container grid grid-cols-12 gap-8 items-center">
 
-<section class="dark:bg-black min-h-screen flex items-center pt-20 md:pt-0 ">
-<div class="container grid grid-cols-12 gap-4">
-    <!-- Text Section -->
-    <div class="col-span-12 md:col-span-6 flex items-center" [@slideInLeft]>
-        <div class="caption px-4 sm:px-8 md:px-12 dark:text-white">
+    <div class="col-span-12 md:col-span-6 flex items-center">
+        <div class="caption dark:text-white">
             <h5 class="font-bold text-xl mb-2">
                 {{'home.welcome'|translate}}
             </h5>
             <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                {{'home.i_am'|translate}} <br>{{'home.name'|translate}}<br>
-                <!-- <span class="text-main">{{'home.job_title'|translate}}</span> -->
-                 <span class="text-main inline-block">
-            {{displayText}}
-            <span class="cursor-blink"></span>
+                <span class="hero-intro">{{'home.i_am'|translate}}</span><span class="hero-name">{{'home.name'|translate}}</span>
+
+                 <span class="text-main inline-block hero-role">
+            {{'home.job_title' | translate}}
+
           </span>
             </h1>
-            <div class="w-full max-w-[200px] flex justify-between mt-6">
-                <a href="https://github.com/a7medkhaled16"><i class="fab fa-github text-2xl text-gray-600 hover:text-main mybtn"></i></a>
-                <a href="https://www.linkedin.com/in/ahmedkhaled16"><i class="fab fa-linkedin text-2xl text-gray-600 hover:text-main mybtn"></i></a>
-                <a href="https://www.instagram.com/a7meed_aboels3ood"><i class="fab fa-instagram text-2xl text-gray-600 hover:text-main mybtn"></i></a>
-                <a href="https://www.facebook.com/ahmed.aboelsoud.1690"><i class="fab fa-facebook text-2xl text-gray-600 hover:text-main mybtn"></i></a>
+            <div class="hero-socials">
+                <a href="https://github.com/a7medkhaled16"><span class="sr-only">github</span><svg class="fab fa-github text-2xl text-gray-600 hover:text-main mybtn" aria-hidden="true"><use href="/icons.svg#github"></use></svg></a>
+                <a href="https://www.linkedin.com/in/ahmedkhaled16"><span class="sr-only">linkedin</span><svg class="fab fa-linkedin text-2xl text-gray-600 hover:text-main mybtn" aria-hidden="true"><use href="/icons.svg#linkedin"></use></svg></a>
+                <a href="https://www.instagram.com/a7meed_aboels3ood"><span class="sr-only">instagram</span><svg class="fab fa-instagram text-2xl text-gray-600 hover:text-main mybtn" aria-hidden="true"><use href="/icons.svg#instagram"></use></svg></a>
+                <a href="https://www.facebook.com/ahmed.aboelsoud.1690"><span class="sr-only">facebook</span><svg class="fab fa-facebook text-2xl text-gray-600 hover:text-main mybtn" aria-hidden="true"><use href="/icons.svg#facebook"></use></svg></a>
             </div>
-            
 
-            <a href="https://drive.google.com/file/d/1HYMpgR97wRQyHVvya8Wy7PClDvNH8fU7/view?usp=sharing" target="_blank">
-  <button class="cv-btn my-3 p-2 mx-3 border-2 cursor-pointer border-main text-main rounded-lg font-bold transform transition-all duration-300 hover:bg-main hover:text-white hover:scale-110">
-    <i class="fa-solid fa-file-pdf "></i>
-     My CV
-  </button>
+
+            <a href="https://drive.google.com/file/d/1HYMpgR97wRQyHVvya8Wy7PClDvNH8fU7/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+  <span class="cv-btn">
+    <svg class="fa-solid fa-file-pdf " aria-hidden="true"><use href="/icons.svg#file-pdf"></use></svg>
+     {{'home.cv' | translate}}
+  </span>
 </a>
 
         </div>
     </div>
-    
-    <!-- Image Section -->
-    <div class="col-span-12 md:col-span-6 flex items-center justify-center" [@slideInRight]>
-        <div class="img relative w-full max-w-[500px] h-[400px] sm:h-[500px] md:h-[600px]">
-            <div class="absolute w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] 
-                        top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                        bg-main rounded-full"></div>
-            <img src="/imges/faa_profile-removebg-preview (1).png" 
-                 class="absolute w-[300px] sm:w-[400px] md:w-[550px] 
-                        top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10" 
-                 alt="Ahmed Khaled">
+
+
+    <div class="col-span-12 md:col-span-6 flex items-center justify-center">
+        <div class="img">
+            <div class="portrait-disc" aria-hidden="true"></div>
+            <img src="/imges/faa_profile-removebg-preview (1).webp"
+                 class="portrait"
+                 alt="Ahmed Khaled" width="500" height="499" decoding="async" fetchpriority="high">
         </div>
     </div>
 </div>
@@ -54,3 +52,5 @@
 <app-contact/>
 
 
+
+</main>
