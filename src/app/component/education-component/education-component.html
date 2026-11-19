@@ -1,59 +1,120 @@
 <section id="experience" class="portfolio-section reveal">
-    <h2 class="font-bold text-3xl text-center mt-5">{{"experience.experience_education_title" |translate}}</h2>
-    <div class="bg-main w-[200px] h-[3px] m-auto my-2"></div>
- <div class="container grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
-    <div class="min-w-0 dark:text-white ">
-        <div class="section p-4 bg-white dark:bg-gray-800 rounded transition-all duration-300 ">
-            <h4 class="font-bold text-xl"><span class="text-main mx-2">*</span>{{"experience.education_1_title" |translate}}</h4>
-            <p class="my-2"> - {{"experience.education_1_degree" |translate}} </p>
+  <h2 class="font-bold text-3xl text-center mt-5">{{ "experience.section_title" | translate }}</h2>
+  <div class="bg-main w-[200px] h-[3px] m-auto my-2"></div>
 
-        </div>
+  <div class="container mt-10">
+    <!-- Work Experience -->
+    <div class="subsection-heading">
+      <svg class="fa-solid subsection-icon" aria-hidden="true"><use href="/icons.svg#briefcase"></use></svg>
+      <h3>{{ "experience.work_heading" | translate }}</h3>
     </div>
-    <div class="min-w-0 dark:text-white ">
-        <div class="section p-4 bg-white dark:bg-gray-800 rounded transition-all duration-300 ">
-            <h4 class="font-bold text-xl"><span class="text-main mx-2">*</span>{{"experience.experience_1_title" |translate}} </h4>
-            <p class="my-2"> - {{"experience.experience_1_desc_1" |translate}} </p>
-            <p> - {{"experience.experience_1_desc_2" |translate}} </p>
-           <div class="skills my-3">
-             <span class="px-3 py-2 bg-red-300 text-red-800 rounded">HTML5</span>
-            <span class="px-3 py-2 bg-sky-300 text-sky-800 rounded ml-2">CSS</span>
-            <span class="px-3 py-2 bg-green-300 text-green-800 rounded ml-2">JavaScript</span>
-            <span class="px-3 py-2 bg-gray-300 text-gray-800 rounded ml-2">TypeScript</span>
-            <span class="px-3 py-2 bg-orange-300 text-orange-800 rounded ml-2">Angular</span>
-            <span class="px-3 py-2 bg-blue-300 text-blue-800 rounded ml-2">Bootstrap</span>
-           </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
+      @for (item of workExperience; track item.titleKey) {
+        <div class="min-w-0 dark:text-white">
+          <div class="section">
+            <div class="card-header">
+              <div class="card-title-row">
+                <h4 class="font-bold text-lg">
+                  <span class="text-main">{{ item.titleKey | translate }}</span>
+                  <span class="company-name"> – {{ item.companyKey | translate }}</span>
+                </h4>
+                @if (item.isCurrent) {
+                  <span class="status-badge current-badge">{{ "experience.present" | translate }}</span>
+                }
+              </div>
+              @if (item.periodKey) {
+                <div class="card-meta">
+                  <span class="meta-item">{{ item.periodKey | translate }}</span>
+                  @if (item.typeKey) {
+                    <span class="meta-separator">·</span>
+                    <span class="meta-item">{{ item.typeKey | translate }}</span>
+                  }
+                </div>
+              }
+              @if (item.locationKey) {
+                <div class="card-location">
+                  <svg class="fa-solid location-icon" aria-hidden="true"><use href="/icons.svg#location-dot"></use></svg>
+                  <span>{{ item.locationKey | translate }}</span>
+                </div>
+              }
+            </div>
+            <ul class="desc-list">
+              @for (descKey of item.descKeys; track descKey) {
+                <li>{{ descKey | translate }}</li>
+              }
+            </ul>
+            <div class="skills">
+              @for (badge of item.badges; track badge) {
+                <span class="tech-badge">{{ badge }}</span>
+              }
+            </div>
+          </div>
         </div>
+      }
     </div>
-    <div class="min-w-0 dark:text-white ">
-        <div class="section p-4 bg-white dark:bg-gray-800 rounded transition-all duration-300 ">
-            <h4 class="font-bold text-xl"><span class="text-main mx-2">*</span>{{"experience.experience_2_title" |translate}} </h4>
-            <p class="my-2"> - {{"experience.experience_2_desc" |translate}} </p>
 
-           <div class="skills my-3">
-            <span class="px-3 py-2 bg-gray-300 text-gray-800 rounded ml-2">TypeScript</span>
-            <span class="px-3 py-2 bg-orange-300 text-orange-800 rounded ml-2">Angular</span>
-            <span class="px-3 py-2 bg-blue-300 text-blue-800 rounded ml-2">Bootstrap</span>
-            <span class="px-3 py-2 bg-red-300 text-red-800 rounded ml-2">Nodejs</span>
-            <span class="px-3 py-2 bg-sky-300 text-sky-800 rounded ml-2">MongoDB</span>
-            <span class="px-3 py-2 bg-green-300 text-green-800 rounded ml-2">Express</span>
-           </div>
-        </div>
+    <!-- Training & Certifications -->
+    <div class="subsection-heading">
+      <svg class="fa-solid subsection-icon" aria-hidden="true"><use href="/icons.svg#certificate"></use></svg>
+      <h3>{{ "experience.training_heading" | translate }}</h3>
     </div>
-    <div class="min-w-0 dark:text-white ">
-        <div class="section p-4 bg-white dark:bg-gray-800 rounded transition-all duration-300 ">
-            <h4 class="font-bold text-xl"><span class="text-main mx-2">*</span>{{"experience.experience_3_title" |translate}}</h4>
-            <p class="my-2"> -  {{"experience.experience_3_desc" |translate}}. </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
+      @for (item of training; track item.titleKey) {
+        <div class="min-w-0 dark:text-white">
+          <div class="section">
+            <div class="card-header">
+              <div class="card-title-row">
+                <h4 class="font-bold text-lg">
+                  <span class="text-main">{{ item.titleKey | translate }}</span>
+                  <span class="company-name"> – {{ item.companyKey | translate }}</span>
+                </h4>
+                @if (item.isCompleted) {
+                  <span class="status-badge completed-badge">{{ "experience.completed" | translate }}</span>
+                }
+              </div>
+              @if (item.periodKey) {
+                <div class="card-meta">
+                  <span class="meta-item">{{ item.periodKey | translate }}</span>
+                </div>
+              }
+            </div>
+            <ul class="desc-list">
+              @for (descKey of item.descKeys; track descKey) {
+                <li>{{ descKey | translate }}</li>
+              }
+            </ul>
+            <div class="skills">
+              @for (badge of item.badges; track badge) {
+                <span class="tech-badge">{{ badge }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
 
-           <div class="skills my-3">
-             <span class="px-3 py-2 bg-red-300 text-red-800 rounded">HTML5</span>
-            <span class="px-3 py-2 bg-sky-300 text-sky-800 rounded ml-2">CSS</span>
-            <span class="px-3 py-2 bg-blue-300 text-blue-800 rounded ml-2">Bootstrap</span>
-            <span class="px-3 py-2 bg-green-300 text-green-800 rounded ml-2">JavaScript</span>
-            <span class="px-3 py-2 bg-gray-300 text-gray-800 rounded ml-2">TypeScript</span>
-            <span class="px-3 py-2 bg-orange-300 text-orange-800 rounded ml-2">Angular</span>
-            <span class="px-3 py-2 bg-blue-300 text-blue-800 rounded ml-2">Tailwind</span>
-           </div>
-        </div>
+    <!-- Education -->
+    <div class="subsection-heading">
+      <svg class="fa-solid subsection-icon" aria-hidden="true"><use href="/icons.svg#graduation-cap"></use></svg>
+      <h3>{{ "experience.education_heading" | translate }}</h3>
     </div>
- </div>
+    <div class="edu-card">
+      <div class="edu-card-inner">
+        <div class="edu-icon-wrapper">
+          <svg class="fa-solid edu-icon" aria-hidden="true"><use href="/icons.svg#graduation-cap"></use></svg>
+        </div>
+        <div class="edu-content">
+          <div class="edu-top-row">
+            <h4 class="edu-university">{{ "experience.edu_university" | translate }}</h4>
+            <span class="status-badge graduated-badge">
+              {{ "experience.graduated" | translate }} {{ "experience.edu_year" | translate }}
+            </span>
+          </div>
+          <p class="edu-faculty">{{ "experience.edu_faculty" | translate }}</p>
+          <p class="edu-degree">{{ "experience.edu_degree" | translate }}</p>
+          <p class="edu-desc">{{ "experience.edu_desc" | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

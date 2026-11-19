@@ -1,4 +1,284 @@
-.section { height: 100%; margin: 0; padding: 26px; border: 1px solid var(--line); border-inline-start: 3px solid var(--color-main); border-radius: 18px; background: var(--surface); box-shadow: 0 4px 18px #00000004; transition: transform .25s, box-shadow .25s; }
-.section:hover { transform: translateY(-4px); box-shadow: 0 12px 28px #00000008; }
-h4 { line-height: 1.6; } p { color: var(--muted); line-height: 1.8; }
-.skills { display: flex; flex-wrap: wrap; gap: 8px; } .skills span { margin: 0; padding: 5px 10px; font-size: .75rem; border-radius: 8px; }
+/* ─── Subsection Headings ─── */
+.subsection-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.subsection-heading h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+.subsection-icon {
+  width: 1.2em;
+  height: 1.2em;
+  color: var(--color-main);
+  flex-shrink: 0;
+}
+
+/* ─── Cards ─── */
+.section {
+  height: 100%;
+  margin: 0;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-inline-start: 3px solid var(--color-main);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 0 4px 18px #00000004;
+  transition: transform .25s, box-shadow .25s;
+  display: flex;
+  flex-direction: column;
+}
+.section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px #00000008;
+}
+
+/* ─── Card Header ─── */
+.card-header {
+  margin-bottom: 12px;
+}
+.card-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.card-title-row h4 {
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+}
+.company-name {
+  color: var(--muted);
+  font-weight: 600;
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+.meta-item {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.meta-separator {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.card-location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.location-icon {
+  width: 0.75em;
+  height: 0.75em;
+  flex-shrink: 0;
+}
+
+/* ─── Status Badges ─── */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border-radius: 99px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.current-badge {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+:host-context(.dark) .current-badge,
+:where(.dark, .dark *) .current-badge {
+  background: #166534;
+  color: #bbf7d0;
+  border-color: #15803d;
+}
+.completed-badge {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+:host-context(.dark) .completed-badge,
+:where(.dark, .dark *) .completed-badge {
+  background: #1e3a5f;
+  color: #93c5fd;
+  border-color: #1e40af;
+}
+.graduated-badge {
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+}
+:host-context(.dark) .graduated-badge,
+:where(.dark, .dark *) .graduated-badge {
+  background: #431407;
+  color: #fdba74;
+  border-color: #9a3412;
+}
+
+/* ─── Description List ─── */
+.desc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px 0;
+  flex: 1;
+}
+.desc-list li {
+  position: relative;
+  padding-inline-start: 16px;
+  margin-bottom: 6px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.88rem;
+}
+.desc-list li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-main);
+}
+
+/* ─── Tech Badges ─── */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+.tech-badge {
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--color-main);
+  border: 1px solid color-mix(in srgb, var(--color-main) 20%, transparent);
+  white-space: nowrap;
+}
+
+/* ─── Education Card ─── */
+.edu-card {
+  width: 100%;
+}
+.edu-card-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 28px;
+  border-radius: 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--color-main);
+  box-shadow: 0 4px 24px #00000006;
+  transition: transform .25s, box-shadow .25s;
+}
+.edu-card-inner:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px #00000008;
+}
+.edu-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--accent-soft);
+  flex-shrink: 0;
+}
+.edu-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--color-main);
+}
+.edu-content {
+  flex: 1;
+  min-width: 0;
+}
+.edu-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.edu-university {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.4;
+}
+.edu-faculty {
+  font-size: 0.92rem;
+  color: var(--color-main);
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+.edu-degree {
+  font-size: 0.88rem;
+  color: var(--ink);
+  font-weight: 500;
+  margin: 0 0 10px 0;
+}
+.edu-desc {
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 640px) {
+  .edu-card-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 20px;
+  }
+  .edu-icon-wrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+  .edu-icon {
+    width: 22px;
+    height: 22px;
+  }
+  .edu-university {
+    font-size: 1.1rem;
+  }
+  .edu-top-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .card-title-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .section {
+    padding: 18px;
+  }
+}
